@@ -16,7 +16,7 @@ const ChessBoard = () => {
                             </div>
                             {rows.map((row, Ind) => (
                                 <div>
-                                    {Idx == 0 || Idx == rows.length + 1 ? <div className="relative">
+                                    {Idx === 0 || Idx === rows.length + 1 ? <div className="relative">
                                         <div className="text-white bg-Border-default absolute top-[735px] pl-10 font-semibold">
                                             {row}
                                         </div>
@@ -24,7 +24,7 @@ const ChessBoard = () => {
                                             {row}
                                         </div>
                                     </div> : <></>}
-                                    <div className={`${(Ind + Idx) % 2 == 0 ? "bg-Square-primary" : "bg-Square-secondary"} h-[90px] w-[90px]`} />
+                                    <div className={`${(Ind + Idx) % 2 === 0 ? "bg-Square-primary" : "bg-Square-secondary"} h-[90px] w-[90px]`} />
                                 </div>
                             ))}
                         </div>
