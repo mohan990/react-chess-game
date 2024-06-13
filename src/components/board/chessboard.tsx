@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 
-import { makeMove, getFen, resetGame } from '../logic/chessLogic';
-
 import Piece from "../pieces/piece";
 
 
 import { BeatLoader } from "react-spinners";
 const ChessBoard = () => {
 
-    const [rows, setRows] = useState(["A", "B", "C", "D", "E", "F", "G", "H"])
-    const [columns, setColumns] = useState(["1", "2", "3", "4", "5", "6", "7", "8"])
-
-    const [fromSquare, setFromSquare] = useState(null);
+    const [rows] = useState(["A", "B", "C", "D", "E", "F", "G", "H"])
+    const [columns] = useState(["1", "2", "3", "4", "5", "6", "7", "8"])
 
     const initialBoardSetup = [
         ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
@@ -24,7 +20,7 @@ const ChessBoard = () => {
         ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
     ];
 
-    const [position, setPosition] = useState(initialBoardSetup);
+    const [position] = useState(initialBoardSetup);
 
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
