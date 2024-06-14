@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 
 import Piece from "../pieces/piece";
-import { makeMove, getFen, resetGame, getPiece,getPossibleMoves } from '../logic/chessLogic';
+// import { makeMove, getFen, resetGame, getPiece,getPossibleMoves } from '../logic/chessLogic';
+
+import { makeMove, resetGame, getPiece } from '../logic/chessLogic';
 
 import { Toaster, toast } from "sonner";
 
 import { BeatLoader } from "react-spinners";
 import { Button } from "../../ui/button";
-import { Move } from "chess.js";
+// import { Move } from "chess.js";
 const ChessBoard = () => {
 
     const [rows] = useState(["A", "B", "C", "D", "E", "F", "G", "H"])
     const [columns] = useState(["1", "2", "3", "4", "5", "6", "7", "8"])
     const [fromSquare, setFromSquare] = useState<{ row: number, col: number } | null>(null);
-    const [togglePlayer, setTogglePlayer] = useState(0) // 0 for white, 1 for black
+    // const [togglePlayer, setTogglePlayer] = useState(0) // 0 for white, 1 for black
     const [gameInitiated, setGameInitiated] = useState(0)
-    const [possibleMoves,setPossibleMoves] = useState<Move[]>([])
+    // const [possibleMoves,setPossibleMoves] = useState<Move[]>([])
+    // const [possibleMoves,setPossibleMoves] = useState<Move[]>([])
 
 
     const startWithWhite = [
@@ -61,7 +64,7 @@ const ChessBoard = () => {
                 console.log("inside if")
                 updatePosition(fromSquare, { row: rowIdx, col: colIdx });
                 setFromSquare(null);
-                setTogglePlayer(prev => prev === 0 ? 1 : 0)
+                // setTogglePlayer(prev => prev === 0 ? 1 : 0)
                 setGameInitiated(1)
             } else {
                 // alert("Invalid move");
@@ -74,9 +77,9 @@ const ChessBoard = () => {
             const piece = getPiece(square);
             if (piece) {
                 setFromSquare({ row: rowIdx, col: colIdx });
-                const moves = getPossibleMoves(square)
-                console.log(moves,"moves......")
-                setPossibleMoves(moves)
+                // const moves = getPossibleMoves(square)
+                // console.log(moves,"moves......")
+                // setPossibleMoves(moves)
             }
         }
     };
@@ -91,7 +94,6 @@ const ChessBoard = () => {
     };
 
     const handleResetGame = () => {
-        // setIsLoading(true)
         resetGame()
         setPosition(startWithWhite);
         setFromSquare(null);
