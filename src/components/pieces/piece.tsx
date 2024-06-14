@@ -41,7 +41,7 @@ const Piece: FC<PieceProps> = ({ piece }) => {
     const pieceClass = pieceClassMap[piece];
 
     // Return a div with the appropriate class to style the piece
-    return <img src={pieceClass} width={50} height={50} alt={piece} />;
+    return <img src={pieceClass} width={50} height={50} alt={piece} className="cursor-pointer"/>;
 };
 
 export default Piece
