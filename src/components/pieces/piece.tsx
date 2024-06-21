@@ -13,7 +13,8 @@ import BlackKnight from "../../assets/images/black/Knight.svg"
 import BlackPawn from "../../assets/images/black/Pawn.svg"
 import BlackQueen from "../../assets/images/black/Queen.svg"
 import BlackRook from "../../assets/images/black/Rook.svg"
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { globalContext } from "../../context/context";
 
 interface PieceProps {
     piece: any;
@@ -22,6 +23,7 @@ interface PieceProps {
 
 
 const Piece: FC<PieceProps> = ({ piece,touchPiece }) => {
+    const {isToggled} = useContext(globalContext)
     // Lookup the appropriate CSS class based on the piece character
     const pieceClassMap: { [key: string]: string } = {
         p: BlackPawn,
@@ -42,7 +44,7 @@ const Piece: FC<PieceProps> = ({ piece,touchPiece }) => {
     const pieceClass = pieceClassMap[piece];
 
     // Return a div with the appropriate class to style the piece
-    return <img src={pieceClass} width={50} height={50} alt={piece} className={`pieces cursor-pointer relative ${touchPiece}`}/>;
+    return <img src={pieceClass} width={50} height={50} alt={piece} className={`pieces cursor-pointer relative ${touchPiece} ${isToggled && piece == piece.toLowerCase()?"rotate-180":"rotate-0"}`}/>;
 };
 
 export default Piece
