@@ -6,7 +6,7 @@ interface PieceColor {
     black: boolean;
     white: boolean
 }
-const PieceColor = {
+const isPiece = {
     black: false,
     white: false
 }
@@ -58,7 +58,7 @@ export const GlobalContextProvider = ({
     const [fromSquare, setFromSquare] = useState<{ row: number, col: number } | null>(null);
     const [position, setPosition] = useState(startWithWhite);
     const [selectedSquare, setSelectedSquare] = useState("")
-    const [pieceColor, setPieceColor] = useState<PieceColor>(PieceColor)
+    const [pieceColor, setPieceColor] = useState<PieceColor>(isPiece)
 
 
     return (
