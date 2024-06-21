@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { globalContext } from "../../context/context";
-import { makeMove, resetGame, getPiece, getPossibleMoves } from '../logic/chessLogic';
+import { makeMove, getPiece, getPossibleMoves } from '../logic/chessLogic';
 import { toast } from "sonner";
 
 
@@ -42,7 +42,7 @@ export const MovePieces = () => {
                     setHighLightedPiece({ row: rowIdx, col: colIdx })
                     const possibleMoves = getPossibleMoves(square)
                     setHighLightPossibleMoves(possibleMoves.map(move => move.length === 3 ? move.slice(1) : move))
-                    piece.color == 'w' ? setPieceColor({ white: true, black: false }) : setPieceColor({ white: false, black: true })
+                    piece.color === 'w' ? setPieceColor({ white: true, black: false }) : setPieceColor({ white: false, black: true })
                 }
             }
         }
