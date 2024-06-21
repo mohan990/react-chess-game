@@ -44,7 +44,7 @@ const Piece: FC<PieceProps> = ({ piece,touchPiece }) => {
     const pieceClass = pieceClassMap[piece];
 
     // Return a div with the appropriate class to style the piece
-    return <img src={pieceClass} width={50} height={50} alt={piece} className={`pieces cursor-pointer relative ${touchPiece} ${isToggled && piece == piece.toLowerCase()?"rotate-180":"rotate-0"}`}/>;
+    return <img src={pieceClass} width={50} height={50} alt={piece} className={`pieces cursor-pointer relative ${touchPiece} ${isToggled && piece === piece.toLowerCase()?"rotate-180":"rotate-0"}`}/>;
 };
 
 export default Piece

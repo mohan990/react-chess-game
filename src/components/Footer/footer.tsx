@@ -14,7 +14,6 @@ export const Footer = () => {
         setPosition,
         isToggled,
         setIsToggled,
-        setSelectedSquare
     } = useContext(globalContext)
     const handleResetGame = () => {
         resetGame()
