@@ -10,7 +10,7 @@ module.exports = {
       },
       colors:{
         Border:{
-          default:"#38180B"
+          default:"#1B1212"
         },
         Square:{
           primary:"#732E11",
@@ -18,7 +18,7 @@ module.exports = {
         },
         Piece:{
           primary:"#FFFFFF",
-          secondary:"#38180B",
+          secondary:"black",
         },
       }
     },

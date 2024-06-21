@@ -1,9 +1,13 @@
+import { Toaster } from 'sonner';
 import './App.css';
-import FullBoard from '../src/pages';
+import GlobalContextProvider from './context/context';
+import HomePage from './pages/homePage';
 function App() {
   return (
-    <FullBoard/>
+    <GlobalContextProvider>
+      <HomePage />
+      <Toaster position="top-center" richColors expand={true} />
+    </GlobalContextProvider>
   );
 }
-
 export default App;

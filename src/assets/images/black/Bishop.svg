@@ -5,12 +5,12 @@
 <path d="M210.98 214.698C210.98 214.698 201.807 187.487 201.807 174.114C201.807 160.742 217.095 146.213 217.095 146.213L290.883 87.4514C281.304 80.939 275.192 71.0478 275.192 59.9722C275.192 40.3601 294.357 24.4613 317.999 24.4613C341.641 24.4613 360.807 40.3601 360.807 59.9722C360.807 71.0261 354.719 80.9003 345.172 87.4132L421.961 146.213C421.961 146.213 434.192 160.742 434.192 174.114C434.192 187.487 421.961 214.698 421.961 214.698M210.98 214.698L217.095 247.673H412.788L421.961 214.698M210.98 214.698H316.47H421.961" stroke="white" stroke-width="18.4296"/>
 <defs>
 <linearGradient id="paint0_linear_3_680" x1="318.678" y1="206.697" x2="318.678" y2="598.139" gradientUnits="userSpaceOnUse">
-<stop stop-color="#38180B"/>
-<stop offset="1" stop-color="#3A1A0C"/>
+<stop stop-color="black"/>
+<stop offset="1" stop-color="black"/>
 </linearGradient>
 <linearGradient id="paint1_linear_3_680" x1="317.999" y1="24.4613" x2="317.999" y2="247.673" gradientUnits="userSpaceOnUse">
-<stop stop-color="#38180B"/>
-<stop offset="1" stop-color="#3A1A0C"/>
+<stop stop-color="black"/>
+<stop offset="1" stop-color="black"/>
 </linearGradient>
 </defs>
 </svg>

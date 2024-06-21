@@ -8,7 +8,6 @@ export const makeMove = (move: any) => {
         const result = game.move(move);
         return result ? true : false;
     } catch (e) {
-        console.error('Invalid move:', e);
         return false;
     }
 };
@@ -22,10 +21,9 @@ export const resetGame = () => {
 };
 
 export const getPiece = (square: any) => {
-    console.log(square,"sqaure  ")
     return game.get(square);
 };
 
 export const getPossibleMoves = (square:any) => {
-    return game.moves({ square, verbose: true });
+    return game.moves({ square:square });
   };

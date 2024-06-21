@@ -1,26 +1,27 @@
 // white pieces
-import WhiteBishop from "../../images/white/Bishop.svg";
-import WhiteKing from "../../images/white/King.png";
-import Whiteknight from "../../images/white/Knight.svg";
-import WhitePawn from "../../images/white/Pawn.svg";
-import WhiteQueen from "../../images/white/Queen.svg";
-import WhiteRook from "../../images/white/Rook.svg";
+import WhiteBishop from "../../assets/images/white/Bishop.svg";
+import WhiteKing from "../../assets/images/white/King.png";
+import Whiteknight from "../../assets/images/white/Knight.svg";
+import WhitePawn from "../../assets/images/white/Pawn.svg";
+import WhiteQueen from "../../assets/images/white/Queen.svg";
+import WhiteRook from "../../assets/images/white/Rook.svg";
 
 // Black Pieces
-import BlackBishop from "../../images/black/Bishop.svg"
-import BlackKing from "../../images/black/King.svg"
-import BlackKnight from "../../images/black/Knight.svg"
-import BlackPawn from "../../images/black/Pawn.svg"
-import BlackQueen from "../../images/black/Queen.svg"
-import BlackRook from "../../images/black/Rook.svg"
+import BlackBishop from "../../assets/images/black/Bishop.svg"
+import BlackKing from "../../assets/images/black/King.svg"
+import BlackKnight from "../../assets/images/black/Knight.svg"
+import BlackPawn from "../../assets/images/black/Pawn.svg"
+import BlackQueen from "../../assets/images/black/Queen.svg"
+import BlackRook from "../../assets/images/black/Rook.svg"
 import { FC } from "react";
 
 interface PieceProps {
     piece: any;
+    touchPiece:string;
 }
 
 
-const Piece: FC<PieceProps> = ({ piece }) => {
+const Piece: FC<PieceProps> = ({ piece,touchPiece }) => {
     // Lookup the appropriate CSS class based on the piece character
     const pieceClassMap: { [key: string]: string } = {
         p: BlackPawn,
@@ -41,7 +42,7 @@ const Piece: FC<PieceProps> = ({ piece }) => {
     const pieceClass = pieceClassMap[piece];
 
     // Return a div with the appropriate class to style the piece
-    return <img src={pieceClass} width={50} height={50} alt={piece} className="cursor-pointer"/>;
+    return <img src={pieceClass} width={50} height={50} alt={piece} className={`cursor-pointer relative ${touchPiece}`}/>;
 };
 
 export default Piece
