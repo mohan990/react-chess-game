@@ -55,7 +55,7 @@ export const MovePieces = () => {
                 setFromSquare(null);
                 setHighLightedPiece(null);
                 setHighLightPossibleMoves([])
-                if (square == checkMateIdx.filter((item: any) => item !== "")[0]) {
+                if (square === checkMateIdx.filter((item: any) => item !== "")[0]) {
                     toast("CheckMate", {
                         duration: 5000
                     })
