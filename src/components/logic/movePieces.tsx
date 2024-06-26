@@ -15,11 +15,11 @@ export const MovePieces = () => {
         setSelectedSquare,
         fromSquare,
         setFromSquare,
-        setPosition
+        setPosition,
+        setCheckMate
     } = useContext(globalContext)
 
- const handleSquareClick = (rowIdx: number, colIdx: number) => {
-        console.log("inside")
+    const handleSquareClick = (rowIdx: number, colIdx: number, checkMateIdx?: any) => {
         const square = `${String.fromCharCode(97 + colIdx)}${8 - rowIdx}`;
 
         if (square === selectedSquare) {
@@ -55,6 +55,13 @@ export const MovePieces = () => {
                 setFromSquare(null);
                 setHighLightedPiece(null);
                 setHighLightPossibleMoves([])
+                if (square == checkMateIdx.filter((item: any) => item !== "")[0]) {
+                    toast("CheckMate", {
+                        duration: 5000
+                    })
+                    setCheckMate(true)
+                    return
+                }
                 pieceColor.white ? toast("Black's Turn", {
                     duration: 1000
                 }) : toast("White's Turn", {

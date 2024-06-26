@@ -29,6 +29,8 @@ export type GlobalContextType = {
     setPosition:React.Dispatch<React.SetStateAction<any>>;
     isToggled:boolean
     setIsToggled:React.Dispatch<React.SetStateAction<any>>;
+    checkMate:boolean;
+    setCheckMate:React.Dispatch<React.SetStateAction<any>>;
   };
 
 
@@ -49,7 +51,9 @@ export const globalContext = createContext<GlobalContextType>({
     pieceColor:{black:false,white:false},
     setPieceColor:()=>{},
     isToggled:false,
-    setIsToggled:()=>{}
+    setIsToggled:()=>{},
+    checkMate:false,
+    setCheckMate:()=>{}
 });
 
 export const GlobalContextProvider = ({
@@ -64,6 +68,7 @@ export const GlobalContextProvider = ({
     const [selectedSquare, setSelectedSquare] = useState("")
     const [pieceColor, setPieceColor] = useState<PieceColor>(isPiece)
     const [isToggled, setIsToggled] = useState(false);
+    const [checkMate,setCheckMate]= useState(false)
 
     return (
         <globalContext.Provider
@@ -84,7 +89,9 @@ export const GlobalContextProvider = ({
                 pieceColor,
                 setPieceColor,
                 isToggled,
-                setIsToggled
+                setIsToggled,
+                checkMate,
+                setCheckMate
             }}>
             {children}
         </globalContext.Provider >

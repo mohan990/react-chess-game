@@ -1,7 +1,6 @@
 import { FC, useContext } from "react";
 import { globalContext } from "../../context/context";
 import PlacePieces from "../logic/placePieces";
-import { MovePieces } from "../logic/movePieces";
 import { Footer } from "../Footer/footer";
 
 
@@ -12,8 +11,6 @@ const ClassicBoard: FC = () => {
         rows,
         position,
     } = useContext(globalContext)
-
-    const { handleSquareClick } = MovePieces();
 
     return (
         <div className="flex justify-center items-center h-screen flex-col">
@@ -28,7 +25,7 @@ const ClassicBoard: FC = () => {
                             {row.map((piece: any, colIdx: any) => {
                                 const square = `${String.fromCharCode(97 + colIdx)}${8 - rowIdx}`;
                                 return (
-                                    <PlacePieces colIdx={colIdx} piece={piece} rowIdx={rowIdx} square={square} handleSquareClick={() => handleSquareClick(rowIdx, colIdx)}
+                                    <PlacePieces colIdx={colIdx} piece={piece} rowIdx={rowIdx} square={square}
                                     />
                                 );
                             })}

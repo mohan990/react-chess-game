@@ -7,6 +7,7 @@ import { resetGame } from "../logic/chessLogic";
 
 
 export const Footer = () => {
+    const {checkMate}= useContext(globalContext)
     const {
         startWithWhite,
         pieceColor,
@@ -22,6 +23,7 @@ export const Footer = () => {
     };
 
     const handleWhosPlay = () => {
+        if(checkMate) return toast("CheckMate")
         pieceColor.white ? toast("Black's Turn", {
             duration: 1000
         }) : toast("White's Turn", {
