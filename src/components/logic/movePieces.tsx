@@ -41,7 +41,8 @@ export const MovePieces = () => {
                     setSelectedSquare(square)
                     setHighLightedPiece({ row: rowIdx, col: colIdx })
                     const possibleMoves = getPossibleMoves(square)
-                    setHighLightPossibleMoves(possibleMoves.map(move => move.length === 3 ? move.slice(1) : move))
+                    console.log("possible moves",possibleMoves)
+                    setHighLightPossibleMoves(possibleMoves.map(move => move.length === 3 && !move.includes("+") ? move.slice(1) : move))
                     piece.color === 'w' ? setPieceColor({ white: true, black: false }) : setPieceColor({ white: false, black: true })
                 }
             }
